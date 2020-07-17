@@ -137,7 +137,7 @@ user_table_insert = ("""
             level
     FROM staging_events
     WHERE user_id IS NOT NULL
-    AND page  ==  'NextSong';
+    AND page  =  'NextSong';
 """)
 
 song_table_insert = ("""
@@ -187,7 +187,7 @@ songplay_table_insert = ("""
             e.userAgent     AS user_agent
     FROM staging_events e
     JOIN staging_songs  s   ON (e.song = s.title AND e.artist = s.artist_name)
-    AND e.page  ==  'NextSong'
+    AND e.page  =  'NextSong'
 """)
 
 # GET NUMBER OF ROWS IN EACH TABLE
