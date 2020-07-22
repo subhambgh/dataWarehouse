@@ -186,7 +186,7 @@ songplay_table_insert = ("""
             e.location      AS location, 
             e.userAgent     AS user_agent
     FROM staging_events e
-    JOIN staging_songs  s   ON (e.song = s.title AND e.artist = s.artist_name)
+    JOIN staging_songs  s   ON (e.song = s.title AND e.artist = s.artist_name AND e.length = s.duration)
     AND e.page  =  'NextSong'
 """)
 
